@@ -1,4 +1,5 @@
 package client;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,18 +18,23 @@ public class Main {
         System.out.println("Received: " + benvenutoServer);
         out.println("BenveClient V 1.0");
         Scanner scanner = new Scanner(System.in);
-        do{
-        System.out.println("Inserire primo numero");
-        int numeroUno = scanner.nextInt();
-        out.println(numeroUno);
-        System.out.println("Inserire secondo numero ");
-        int numeroDue =scanner.nextInt();
-        out.println(numeroDue);
-        System.out.println("Inserire il tipo di operazione (1 = somma, 2 = sotttrazione, 3 = divisione, 4 = moltiplicazione)");
-        int inserireOperazione = scanner.nextInt();
-        out.println(inserireOperazione);
-        String risultato = new String(in.readLine());
-        System.out.println("il risultato è : " + risultato);
-        }while(true);
+        do {
+            System.out.println("Inserire primo numero");
+            int numeroUno = scanner.nextInt();
+            out.println(numeroUno);
+            System.out.println("Inserire secondo numero ");
+            int numeroDue = scanner.nextInt();
+            out.println(numeroDue);
+            System.out.println(
+                    "Inserire il tipo di operazione (1 = somma, 2 = sotttrazione, 3 = divisione, 4 = moltiplicazione, 0 = uscita)");
+            int inserireOperazione = scanner.nextInt();
+            if (inserireOperazione == 0) {
+                out.println("0");
+                break;
+            }
+            out.println(inserireOperazione);
+            String risultato = new String(in.readLine());
+            System.out.println("il risultato è : " + risultato);
+        } while (true);
     }
 }
